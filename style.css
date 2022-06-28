@@ -106,7 +106,7 @@ section:nth-child(even){
 .header .navbar a{
     font-size: 1.7rem;
     color: var(--light-color);
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 }
 
 .header .navbar a:hover{

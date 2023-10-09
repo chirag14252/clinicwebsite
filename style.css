@@ -31,7 +31,7 @@ section{
 }
 
 section:nth-child(even){
-    background: #6be6f9;
+    background: #34C56C;
 }
 
 .heading{
@@ -46,7 +46,7 @@ section:nth-child(even){
 
 .heading span{
     text-transform: uppercase;
-    color:#36098d;
+    color:black;
 }
 
 .btn{
@@ -57,7 +57,7 @@ section:nth-child(even){
     border:var(--border);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
-    color:#36098d;
+    color:#0f0e12;
     cursor: pointer;
     font-size: 1.7rem;
     background: #fff;
@@ -66,21 +66,13 @@ section:nth-child(even){
 .btn span{
     padding:.7rem 1rem;
     border-radius: .5rem;
-    background: #36098d;
-    color:#fff;
+    background: white;
+    color: #0f0e12;
     margin-left: .5rem;
 }
 
-.btn:hover{
-    background: #36098d;
-    color:#fff;
-}
 
-.btn:hover span{
-    color: #36098d;
-    background:#fff;
-    margin-left: 1rem;
-}
+
 
 .header{
     padding:2rem 9%;
@@ -106,7 +98,7 @@ section:nth-child(even){
 .header .navbar a{
     font-size: 1.7rem;
     color: var(--light-color);
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
 }
 
 .header .navbar a:hover{
@@ -145,7 +137,7 @@ section:nth-child(even){
 
 .home .content h3{
     font-size: 4.5rem;
-    color:var(--black);
+    color:#381e1e;
     line-height: 1.8;
     text-shadow: var(--text-shadow);
 }
@@ -159,15 +151,15 @@ section:nth-child(even){
 
 .icons-container{
     display: grid;
-    gap:2rem;
+    gap:3rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .icons-container .icons{
     border:var(--border);
-    box-shadow: var(--box-shadow);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: .5rem;
     text-align: center;
     padding: 2.5rem;
@@ -175,7 +167,7 @@ section:nth-child(even){
 
 .icons-container .icons i{
     font-size: 4.5rem;
-    color:#36098d;
+    color:black;
     padding-bottom: .7rem;
 }
 
@@ -206,7 +198,7 @@ section:nth-child(even){
 }
 
 .services .box-container .box i{
-    color: #36098d;
+    color: black;
     font-size: 5rem;
     padding-bottom: .5rem;
 }
@@ -311,10 +303,7 @@ section:nth-child(even){
 }
 
 .book .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:2rem;
+   
 }
  
 .book .row .image{
@@ -330,7 +319,7 @@ section:nth-child(even){
     background: #fff;
     border:var(--border);
     box-shadow: var(--box-shadow);
-    text-align: center;
+    text-align: left;
     padding: 2rem;
     border-radius: .5rem;
 }
@@ -520,7 +509,26 @@ section:nth-child(even){
 .footer .credit span{
     color:#36098d;
 }
-
+.form-new{
+    width: 50%;
+   
+}
+.form-body{
+    display: flex;
+    justify-content: space-between;
+}
+.input-box{
+  border-bottom: 1px solid;
+  padding:0px;
+}
+.form-lower{
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+}
+.img-sec{
+    height: 100%;
+}
 
 /* media queries  */
 @media (max-width:991px){

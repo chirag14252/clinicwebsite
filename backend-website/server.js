@@ -1,16 +1,19 @@
 
 import express from "express";
-
+import dotenv from "dotenv";
 import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import cors from "cors";
 import newLetter from "./controllers/newLetter.js";
 import clientDetails from "./controllers/clientDetails.js";
+dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.set("view engine","ejs");
-mongoose.connect("mongodb+srv://USER:X4YtymbjdkRYcfT5@atlascluster.nilxnts.mongodb.net/Clinic?retryWrites=true&w=majority").then(
+const mongoURL = process.env.URL; 
+mongoose.connect(`${mongoURL}`).then(
     ()=>{
         console.log("database connected successfully");
     }

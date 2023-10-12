@@ -472,6 +472,7 @@ section:nth-child(even){
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap:2rem;
+    color: black;
 }
 
 .footer .box-container .box h3{
@@ -483,7 +484,7 @@ section:nth-child(even){
 .footer .box-container .box a{
     display: block;
     font-size: 1.5rem;
-    color:var(--light-color);
+    color:black;
     padding: 1rem 0;
 }
 
@@ -501,7 +502,7 @@ section:nth-child(even){
     padding-top: 2rem;
     margin-top: 2rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color:var(--light-color);
     border-top: .1rem solid rgba(0, 0, 0, .1);
 }
@@ -510,12 +511,20 @@ section:nth-child(even){
     color:#36098d;
 }
 .form-new{
-    width: 50%;
+    display: flex;
+    justify-content: space-between;
    
+}
+.form-actual{
+    width: 60%;
+    height: 60%;
 }
 .form-body{
     display: flex;
     justify-content: space-between;
+}
+.form-new-left{
+    width: 50%;
 }
 .input-box{
   border-bottom: 1px solid;
@@ -529,7 +538,50 @@ section:nth-child(even){
 .img-sec{
     height: 100%;
 }
+.newsletter-form {
+    margin-top: 40px;
+    max-width: 400px;
+  }
 
+  .newsletter-form h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .newsletter-form p {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .newsletter-form input:focus {
+    border: 1px solid #222;
+  }
+
+  .newsletter-form button {
+    background-color: #222;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #333;
+  }
 /* media queries  */
 @media (max-width:991px){
 
@@ -552,7 +604,9 @@ section:nth-child(even){
     #menu-btn{
         display: initial;
     }
-
+    .form-img{
+        display: hidden;
+    }
     .header .navbar{
         position: absolute;
         top:115%; right: 2rem;
@@ -586,5 +640,10 @@ section:nth-child(even){
     html{
         font-size: 50%;
     }
-
+   .form-img{
+    display: none;
+   }
+   .form-actual{
+    width: 100%;
+   }
 }

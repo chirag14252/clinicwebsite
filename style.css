@@ -302,6 +302,9 @@ section:nth-child(even){
     box-shadow: var(--box-shadow);
 }
 
+.book{
+   
+}
 .book .row{
    
 }
@@ -345,25 +348,56 @@ section:nth-child(even){
     padding:1rem 4rem;
 }
 
-.review .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
+
+/* changes of changes in review */
+.review-section{
+    background-color: gray;
+    margin: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.review {
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    gap: 5rem;
+   
+}
+.review-button{
+    display: flex;
+    justify-content: right;
+}
+.review-button button{
+    padding: 2rem 4rem;
+    margin: 10px;
+    border-radius: 4px;
+}
+.review-button :hover{
+  background-color: #34C56C;
 }
 
-.review .box-container .box{
-    border:var(--border);
-    box-shadow: var(--box-shadow);
+.review-box{
+    height: 40rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: .5rem;
-    padding:2.5rem;
+    padding:3rem;
     background: #fff;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
 }
-
-.review .box-container .box img{
+.review-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    min-height: 200px;
+    white-space: normal;
+    overflow-x: scroll;
+}
+.review-box img{
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
@@ -371,37 +405,25 @@ section:nth-child(even){
     border:.5rem solid #fff;
 }
 
-.review .box-container .box h3{
+.review-box h3{
     color:#fff;
     font-size: 2.2rem;
     padding:.5rem 0;
 }
 
-.review .box-container .box .stars i{
-    color:#fff;
+.review-box .stars i{
+    color:black;
     font-size: 1.5rem;
 }
 
-.review .box-container .box .text{
+.review-box .text{
     color:var(--light-color);
     line-height: 1.8;
     font-size: 1.6rem;
     padding-top: 4rem;
 }
 
-.review .box-container .box::before{
-    content: '';
-    position: absolute;
-    top:-4rem; left: 50%;
-    transform:translateX(-50%);
-    background:#36098d;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    height: 25rem;
-    width: 120%;
-    z-index: -1;
-}
-
+/* end of changes in review */
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));

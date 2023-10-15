@@ -49,7 +49,7 @@ const clientDetails = (req, res) => {
         body: {
             name: clientname,
             intro: `<p style="text-align: left;">Welcome to Shubh Dental Clinics! We're very excited to have you on board.<br>
-          Here is the data you submitted:</p>
+          Here are the details you have submitted:</p>
             <table>
               <tr>
                 <td><b>Email:</b></td>

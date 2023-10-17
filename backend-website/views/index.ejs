@@ -63,6 +63,9 @@ const submitHandler = (e) => {
   .catch((err) => {
     console.log(err);
   });
+  nameuser.value = "";
+  review.value = "";
+  fileInput.value = "" ;
 }
 
 btn.addEventListener("click", submitHandler);

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="admin_upload_file">
+        <form >
+          <label for="name">Name</label>
+          <input type="text" id = "name">
+          <br>
+          <br>
+          
+          <input type="file" id = "upl" name="upl">
+          <br>
+          <br>
+          <label for="review">Review</label>
+          <input type="text" id = "review">
+          <button type="Submit" id="btn">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+      
+      // const nameuser = document.getElementById("name");
+      // const review = document.getElementById("review");
+      // const btn = document.getElementById("btn");
+      // const submitHandler = (e)=>{
+      //   e.preventDefault();
+      //   const reqBody = {
+      //     "nameuser":nameuser.value,
+      //      "review":review.value
+      //   }
+      //   axios.post("http://localhost:3000/review",reqBody).then((res)=>{
+      //     return res.status(200).json({message:"review Sent Successfully"});
+      //   }).catch((err)=>{console.log(err)});
+      // }
+      // btn.addEventListener("click",submitHandler);
+      const nameuser = document.getElementById("name");
+const review = document.getElementById("review");
+const fileInput = document.getElementById("upl"); // Change the ID to match the form input
+
+const btn = document.getElementById("btn");
+const submitHandler = (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append("nameuser", nameuser.value);
+  formData.append("review", review.value);
+  formData.append("upl", fileInput.files[0]); // Access the file input and get the first selected file
+
+  axios.post("http://localhost:3000/review", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data", // Set the content type to multipart/form-data
+    },
+  })
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
+
+btn.addEventListener("click", submitHandler);
+    </script>
+  
+</body>
+</html>

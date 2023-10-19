@@ -1,7 +1,7 @@
 import ReviewModel from "../Models/Review.js"
 
 const ReviewController = async (req,res)=>{
-    const filePath = req.file?.path;
+    const filePath = req.file?.filename;
     console.log(req.file);
     const name = req.body.nameuser;
     

@@ -8,8 +8,9 @@ import cors from "cors";
 import newLetter from "./controllers/newLetter.js";
 import clientDetails from "./controllers/clientDetails.js";
 import ReviewController from "./controllers/ReviewController.js";
-
+import ReviewModel from "./Models/Review.js";
 import multer from "multer";
+
 import { fileURLToPath } from "url";
 
 dotenv.config();
@@ -21,7 +22,7 @@ const __dirname = path.dirname(__filename);
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 
-app.use(express.static(`${__dirname}/public`))
+app.use('/images-client',express.static(__dirname+'/public/files'));
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({

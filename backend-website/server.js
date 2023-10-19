@@ -7,9 +7,11 @@ import path from "path";
 import cors from "cors";
 import newLetter from "./controllers/newLetter.js";
 import clientDetails from "./controllers/clientDetails.js";
-import ReviewModel from "./Models/Review.js";
+import ReviewController from "./controllers/ReviewController.js";
+
 import multer from "multer";
 import { fileURLToPath } from "url";
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -46,31 +48,31 @@ app.post("/client",clientDetails);
 // for saving the newsletter in database
 app.post("/newsletter",newLetter)
 
-const upload = multer({dest:"./public/files"})
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      // Configuring file storage destination
+      cb(null, "./public/files");
+    },
+    filename: function (req, file, cb) {
+      // Configuring file name for storage
+      cb(null, file.originalname);
+    },
+  });
+const upload = multer({storage})
 
 
-app.post("/review",upload.single("upl"),(req,res)=>{
-  const filePath = req.file.path;
-  console.log(filePath);
-  const name = req.body.nameuser;
-  console.log(name);
-  const review = req.body.review;
-  console.log(review);
-  ReviewModel.create({
-     name:name,
-     filePath:filePath,
-     review:review
-  }).then((data,err)=>{
-    if(data){
-        console.log(data);
-    }
-    if(err){
-        console.log(err);
-    }
-  })
+app.post("/review",upload.single("upl"),ReviewController);
+ 
+// get review  Api
 
+app.get("/getReview",(req,res)=>{
+    ReviewModel.find().then((data,err)=>{
+     return res.status(200).json({
+        message:data
+     })
+    })
 })
-
 
 
 

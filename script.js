@@ -66,10 +66,9 @@ window.onload = async () => {
    
     ReviewData.forEach((data)=>{
         const childItem = document.createElement('div');
-        
+        childItem.className = "box1"
         childItem.innerHTML = `
-            <div class="box">
-                <img src="" alt="">
+                <img src="http://localhost:3000/images-client/${data.filePath}" alt="">
                 <h3>${data.name}</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
@@ -78,8 +77,8 @@ window.onload = async () => {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p class="text">${data.review}</p>
-            </div>
+                <div class="text">${data.review}</div>
+            
         `;
         console.log(childItem);
         Targetdiv.appendChild(childItem);

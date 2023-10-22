@@ -341,77 +341,80 @@ section:nth-child(even){
     padding: 1rem;
 }
 
-.book .row form .btn{
-    padding:1rem 4rem;
-}
+
 
 .review .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
+   display: flex;
+   overflow-x: auto;
+  flex-wrap: nowrap;
+  gap:2rem;
+   height: 50rem;
+   width: 100%;
+   white-space: nowrap;
+   align-items: center;
 }
 
-.review .box-container .box{
+.box1{
     border:var(--border);
     box-shadow: var(--box-shadow);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding:2.5rem;
     background: #fff;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
+    margin-right: 5rem;
+    padding: 3rem;
+    height: 40rem;
+    width: 40rem;
 }
 
-.review .box-container .box img{
+.box1 img{
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
     object-fit: cover;
     border:.5rem solid #fff;
 }
-
-.review .box-container .box h3{
-    color:#fff;
-    font-size: 2.2rem;
-    padding:.5rem 0;
+.box1 h3{
+    color:black;
+    font-size: 2rem;
+    
 }
-
-.review .box-container .box .stars i{
+.text {
+    font-size: 1rem;
+   overflow: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 50%;
+  }
+  
+.box1 .stars i{
     color:#fff;
     font-size: 1.5rem;
 }
-
-.review .box-container .box .text{
-    color:var(--light-color);
-    line-height: 1.8;
-    font-size: 1.6rem;
-    padding-top: 4rem;
-}
-
-.review .box-container .box::before{
-    content: '';
-    position: absolute;
-    top:-4rem; left: 50%;
-    transform:translateX(-50%);
-    background:#36098d;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    height: 25rem;
-    width: 120%;
-    z-index: -1;
+.review{
+    margin-top: 3rem;
 }
 .review-button{
     display: flex;
     justify-content: end;
 }
 .review button{
-  margin-top: 10px;
+
+  margin-right: 10px ;
    padding: 10px 30px;
+   border-radius: 10px;
+   cursor: pointer;
 }
+.review button :hover{
+    background-color: #444;
+}
+
+
 .review .reviewBottom{
     display: flex;
-    justify-content: end;
+    justify-content:end;
+    align-items: center;
+   
 
 }
 .blogs .box-container{

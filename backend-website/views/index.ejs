@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/index.css">
     <title>Document</title>
 </head>
 <body>
+  
     <div class="admin_upload_file">
-        <form >
-          <label for="name">Name</label>
+      <div class="image-section">
+        <div class="heading_user"><span class="heading_span">Hello Users</span><br>
+           Give your valuable feedbacks for shubh-dental clinics</div>
+        <img src="assets/review.jpg" alt=""  width="600px">
+      </div>
+        <form class="form-patients">
+          <label for="name">Name </label>
           <input type="text" id = "name">
           <br>
           <br>
-          
-          <input type="file" id = "upl" name="upl">
+          <label for="upl">Upload your photo</label>
+          <br>
+         
+            <input type="file" id="upl" name = "upl">
+            
           <br>
           <br>
           <label for="review">Review</label>
-          <input type="text" id = "review">
+          <!-- <input type="text" id = "review"> -->
+          <textarea id = "review"></textarea>
+          <br>
           <button type="Submit" id="btn">Submit</button>
         </form>
-    </div>
+       
+    
     
     <script>
       

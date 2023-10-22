@@ -21,8 +21,8 @@ const __dirname = path.dirname(__filename);
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
-
 app.use('/images-client',express.static(__dirname+'/public/files'));
+app.use(express.static('public'));
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({
